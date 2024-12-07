@@ -11,6 +11,15 @@ The ERP backend is designed to manage Users, Vendors, and Admins for an ERP syst
 
 ---
 
+## Frontend of the application
+https://github.com/user-attachments/assets/e511d91d-b4ea-42c5-be2a-9de28e596a48
+
+https://github.com/user-attachments/assets/2fef71d4-f7f3-471f-b647-c84f8d1ca2c8
+
+https://github.com/user-attachments/assets/4964cd1a-a363-4cd9-b14b-2748d5432ebf
+
+---
+
 ## **Flows**
 
 ### 1. **User Flow**
