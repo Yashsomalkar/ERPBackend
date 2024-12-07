@@ -11,6 +11,18 @@ The ERP backend is designed to manage Users, Vendors, and Admins for an ERP syst
 
 ---
 
+# **MongoDB atlas**
+
+
+
+
+
+![image](https://github.com/user-attachments/assets/cc435ee4-bb27-49a2-a98f-59f5c3a47697)
+
+
+
+---
+
 ## Frontend of the application
 https://github.com/user-attachments/assets/e511d91d-b4ea-42c5-be2a-9de28e596a48
 
