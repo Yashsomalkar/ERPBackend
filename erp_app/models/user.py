@@ -31,3 +31,6 @@ class UserModel:
     @staticmethod
     def get_all_users():
         return mongo.db.users.find({})
+    @staticmethod
+    def delete_user(user_id):
+        return mongo.db.users.delete_one({"_id": user_id})

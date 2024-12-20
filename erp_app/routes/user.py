@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from ERPBackend.erp_app.utils.serializer import serialize_mongo_document
+from erp_app.utils.serializer import serialize_mongo_document
 from erp_app.services.user_service import UserService
 from erp_app.services.product_service import ProductService
 from erp_app.services.cart_service import CartService

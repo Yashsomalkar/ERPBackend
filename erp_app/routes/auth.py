@@ -83,7 +83,7 @@ def login():
     }
     token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
 
-    return jsonify({"token": token}), 200
+    return jsonify({"token": token, "role": user["role"]}), 200
 
 @auth_bp.route("/register/admin", methods=["POST"])
 def register_admin():
@@ -113,49 +113,3 @@ def register_admin():
     UserModel.create_user(user)
 
     return jsonify({"message": "Admin registered successfully"}), 201
-
-@auth_bp.route("/login/admin", methods=["POST"])
-def login_admin():
-    data = request.json
-
-    if not data.get("email") or not data.get("password"):
-        return jsonify({"error": "Email and password are required"}), 400
-
-    user = UserModel.find_user_by_email(data["email"])
-    if not user or user["role"] != "admin":
-        return jsonify({"error": "Invalid credentials"}), 401
-
-    if not check_password_hash(user["password"], data["password"]):
-        return jsonify({"error": "Invalid credentials"}), 401
-
-    payload = {
-        "user_id": str(user["_id"]),
-        "role": user["role"],
-        "exp": datetime.utcnow() + timedelta(days=1)
-    }
-    token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
-
-    return jsonify({"token": token}), 200
-
-@auth_bp.route("/login/vendor", methods=["POST"])
-def login_vendor():
-    data = request.json
-
-    if not data.get("email") or not data.get("password"):
-        return jsonify({"error": "Email and password are required"}), 400
-
-    user = UserModel.find_user_by_email(data["email"])
-    if not user or user["role"] != "vendor":
-        return jsonify({"error": "Invalid credentials"}), 401
-
-    if not check_password_hash(user["password"], data["password"]):
-        return jsonify({"error": "Invalid credentials"}), 401
-
-    payload = {
-        "user_id": str(user["_id"]),
-        "role": user["role"],
-        "exp": datetime.utcnow() + timedelta(days=1)
-    }
-    token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
-
-    return jsonify({"token": token}), 200

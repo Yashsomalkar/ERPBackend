@@ -1,6 +1,6 @@
 from datetime import datetime
 from bson import ObjectId
-from ERPBackend.erp_app.models.cart import CartModel
+from erp_app.models.cart import CartModel
 from erp_app.models.order import OrderModel
 from erp_app.models.product import ProductModel
 

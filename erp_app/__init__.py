@@ -6,7 +6,7 @@ mongo = PyMongo()
 
 def create_app():
     app = Flask(__name__)
-    app.config["MONGO_URI"] = "REDACTED"
+   
     app.config["SECRET_KEY"] = "1337"
 
     

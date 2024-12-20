@@ -13,10 +13,7 @@ class VendorModel:
         data["created_at"] = datetime.utcnow()
         data["updated_at"] = datetime.utcnow()
         return mongo.db.vendors.insert_one(data)
-
-
-
-class VendorModel:
+# class VendorModel:
     @staticmethod
     def find_vendor_by_user_id(user_id):
         """
